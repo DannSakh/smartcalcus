@@ -2,4 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://smartcalcus.online/</loc><changefreq>daily</changefreq><priority>0.9</priority></url>
   <url><loc>https://smartcalcus.online/calc-credit.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://smartcalcus.online/calc-mortgage.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://smartcalcus.online/calc-currency.html</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
 </urlset>

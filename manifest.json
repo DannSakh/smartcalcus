@@ -1,0 +1,9 @@
+{
+  "name": "SmartCalcus",
+  "short_name": "SmartCalcus",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F8FAFC",
+  "theme_color": "#2E6BFF",
+  "icons": []
+}

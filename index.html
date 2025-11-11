@@ -3,58 +3,73 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>SmartCalcus — калькуляторы и справочник</title>
-  <meta name="description" content="SmartCalcus — быстрые и точные онлайн-калькуляторы: кредиты, ипотеки, налоги, коммунальные.">
+  <title>SmartCalcus — умные калькуляторы для жизни и бизнеса</title>
+  <meta name="description" content="Всё, что нужно рассчитать — кредиты, зарплаты, валюты, страховки и многое другое. Бесплатно, быстро, без регистрации.">
+  <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="assets/style.css">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "SmartCalcus",
-    "url": "https://smartcalcus.online/",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://smartcalcus.online/?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
 </head>
 <body>
   <header class="topbar">
-    <div class="brand">SmartCalcus</div>
-    <nav class="nav">
-      <a href="index.html" class="active">Главная</a>
-      <a href="calc-credit.html">Кредитный калькулятор</a>
-      <a href="#">Справочник</a>
-    </nav>
+    <div class="wrap">
+      <div class="brand"><img src="assets/logo.svg" alt="SmartCalcus логотип"><span>SmartCalcus</span></div>
+      <nav class="menu">
+        <a href="index.html" class="active">Главная</a>
+        <a href="calc-credit.html">Финансы</a>
+        <a href="calc-credit.html">Зарплата</a>
+        <a href="calc-currency.html">Авто</a>
+        <a href="calc-currency.html">ЖКХ</a>
+        <a href="calc-currency.html">Справочник</a>
+        <a href="calc-mortgage.html">Инструкции</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="container">
-    <section class="hero">
-      <h1>Онлайн‑калькуляторы для жизни и работы</h1>
-      <p>Точно, быстро и бесплатно. Без регистрации.</p>
-    </section>
+  <section class="hero">
+    <div class="wrap container">
+      <div>
+        <h1>Умные калькуляторы для жизни и бизнеса</h1>
+        <p>Всё, что нужно рассчитать — кредиты, зарплаты, валюты, страховки и многое другое. Бесплатно, быстро, без регистрации.</p>
+        <div class="cta">
+          <a class="btn" href="calc-credit.html">Открыть калькуляторы</a>
+          <a class="btn secondary" href="calc-mortgage.html">Ипотека</a>
+        </div>
+      </div>
+      <div>
+        <span class="badge">Бесплатно и без регистрации</span>
+        <div class="cards" style="margin-top:10px">
+          <a class="card" href="calc-credit.html">
+            <h3>Кредитный калькулятор</h3>
+            <p>Аннуитет и дифференцированный платёж, график и переплата.</p>
+          </a>
+          <a class="card" href="calc-mortgage.html">
+            <h3>Ипотека + досрочка</h3>
+            <p>Перерасчёт графика при частичном погашении.</p>
+          </a>
+          <a class="card" href="calc-currency.html">
+            <h3>Конвертер валют (ЦБ РФ)</h3>
+            <p>Курсы обновляются автоматически.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section class="cards">
-      <a class="card" href="calc-credit.html">
-        <h3>Кредитный калькулятор</h3>
-        <p>Аннуитет / дифференцированный платёж, график, переплата.</p>
-      </a>
-      <div class="card disabled">
-        <h3>Ипотека + досрочка</h3>
-        <p>Скоро: перерасчёт графика с досрочным погашением.</p>
-      </div>
-      <div class="card disabled">
-        <h3>Конвертер валют</h3>
-        <p>Курс ЦБ РФ, обновление автоматически.</p>
-      </div>
-    </section>
+  <main class="container">
+    <h2 class="section-title">Популярные калькуляторы</h2>
+    <div class="cards">
+      <a class="card" href="calc-credit.html"><h3>Кредитный</h3><p>Ежемесячный платёж, переплата и график.</p></a>
+      <a class="card" href="calc-mortgage.html"><h3>Ипотека</h3><p>Досрочное погашение: сокращение срока или платежа.</p></a>
+      <a class="card" href="calc-currency.html"><h3>Валюты</h3><p>USD, EUR, GBP, KZT, CNY, AED — по курсу ЦБ.</p></a>
+    </div>
   </main>
 
   <footer class="footer">
-    <div>© SmartCalcus, 2025</div>
-    <div><a href="#">Политика конфиденциальности</a> · <a href="#">Контакты</a></div>
+    <div class="wrap">
+      <div>© SmartCalcus, 2025</div>
+      <div><a href="sitemap.xml">Sitemap</a> · <a href="robots.txt">robots.txt</a></div>
+      <small class="disclaimer">SmartCalcus — информационный сервис. Расчёты носят справочный характер.</small>
+    </div>
   </footer>
+<script src="assets/app.js"></script>
 </body>
 </html>
