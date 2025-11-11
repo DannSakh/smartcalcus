@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Кредитный калькулятор — SmartCalcus</title>
+  <meta name="description" content="Рассчитайте платёж по кредиту: аннуитет или дифференцированный. График платежей, переплата, процент и тело.">
+  <link rel="stylesheet" href="assets/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Кредитный калькулятор",
+    "operatingSystem": "All",
+    "applicationCategory": "FinanceApplication",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" }
+  }
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">SmartCalcus</div>
+    <nav class="nav">
+      <a href="index.html">Главная</a>
+      <a class="active" href="calc-credit.html">Кредитный калькулятор</a>
+      <a href="#">Справочник</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Кредитный калькулятор</h1>
+    <p class="lead">Аннуитет или дифференцированный платёж. Месячный платёж, переплата и подробный график.</p>
+
+    <form id="credit-form" class="form">
+      <div class="row">
+        <label>Сумма кредита (₽)</label>
+        <input type="number" id="amount" value="1000000" min="1000" step="1000" required>
+      </div>
+      <div class="row">
+        <label>Срок (мес.)</label>
+        <input type="number" id="months" value="60" min="1" step="1" required>
+      </div>
+      <div class="row">
+        <label>Ставка (% годовых)</label>
+        <input type="number" id="rate" value="15" min="0" step="0.01" required>
+      </div>
+      <div class="row">
+        <label>Тип платежа</label>
+        <select id="ptype">
+          <option value="annuity">Аннуитет</option>
+          <option value="diff">Дифференцированный</option>
+        </select>
+      </div>
+      <div class="actions">
+        <button type="submit">Рассчитать</button>
+        <button type="button" id="reset">Сбросить</button>
+      </div>
+    </form>
+
+    <section id="summary" class="summary hidden">
+      <h2>Итоги</h2>
+      <div class="grid">
+        <div><strong>Ежемес. платёж</strong><div id="monthly">—</div></div>
+        <div><strong>Переплата</strong><div id="overpay">—</div></div>
+        <div><strong>Итого к выплате</strong><div id="totalpay">—</div></div>
+      </div>
+    </section>
+
+    <section id="schedule" class="table-wrap hidden">
+      <h2>График платежей</h2>
+      <table>
+        <thead>
+          <tr><th>Месяц</th><th>Платёж</th><th>Проценты</th><th>Тело</th><th>Остаток</th></tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </section>
+
+    <section class="faq">
+      <h2>FAQ</h2>
+      <details>
+        <summary>Чем отличается аннуитет от дифференцированного?</summary>
+        <p>Аннуитет — равные платежи; дифференцированный — уменьшающиеся платежи, но выше в начале.</p>
+      </details>
+      <details>
+        <summary>Можно ли учитывать досрочное погашение?</summary>
+        <p>В ближайшем обновлении добавим перерасчёт графика с частичным и полным досрочным погашением.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>© SmartCalcus, 2025</div>
+    <div><a href="index.html">Главная</a></div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
