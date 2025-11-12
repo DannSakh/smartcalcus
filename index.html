@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="index,follow">
+  <title>Калькуляторы онлайн — кредиты, ипотека, валюты | SmartCalcus</title>
+  <meta name="description" content="Бесплатные калькуляторы: кредит, ипотека с досрочным погашением, конвертер валют ЦБ РФ. Быстро, точно и без регистрации.">
+  <meta name="keywords" content="кредитный калькулятор, ипотечный калькулятор, калькулятор кредита онлайн, рассчитать кредит, аннуитетный платёж, досрочное погашение, конвертер валют ЦБ РФ">
+  <meta property="og:title" content="Кредитный и ипотечный калькуляторы — SmartCalcus">
+  <meta property="og:description" content="Рассчитайте кредит и ипотеку с графиком платежей. Конвертация валют по ЦБ РФ.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://smartcalcus.ru">
+  <link rel="canonical" href="https://smartcalcus.ru">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand"><span class="logo">≡</span><span>SmartCalcus</span></div>
+      <nav class="menu">
+        <a href="#credit" class="active">Кредиты</a>
+        <a href="#mortgage">Ипотека</a>
+        <a href="#currency">Валюты</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap container">
+      <div>
+        <h1>Умные калькуляторы для жизни и бизнеса</h1>
+        <p class="lead">Кредит, ипотека, валюты — всё, что нужно рассчитать. Бесплатно, быстро, без регистрации.</p>
+        <div class="cta">
+          <a class="btn" href="#credit">Открыть калькуляторы</a>
+          <a class="btn secondary" href="#mortgage">Ипотека</a>
+        </div>
+      </div>
+      <div>
+        <span class="badge">Бесплатно и без регистрации</span>
+        <div class="cards" style="margin-top:10px">
+          <a class="card" href="#credit"><h3>Кредитный калькулятор</h3><p>Аннуитет/дифф. платёж, график, переплата.</p></a>
+          <a class="card" href="#mortgage"><h3>Ипотека + досрочка</h3><p>Сокращение срока или платежа после погашения.</p></a>
+          <a class="card" href="#currency"><h3>Конвертер валют (ЦБ РФ)</h3><p>Курсы обновляются автоматически.</p></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <section id="credit" class="section">
+      <h2>Кредитный калькулятор</h2>
+      <form id="credit-form" class="form grid3">
+        <div class="row"><label>Сумма кредита (₽)</label><input type="number" id="amount" value="1000000" min="1000" step="1000" required></div>
+        <div class="row"><label>Срок (мес.)</label><input type="number" id="months" value="60" min="1" step="1" required></div>
+        <div class="row"><label>Ставка (% годовых)</label><input type="number" id="rate" value="15" min="0" step="0.01" required></div>
+        <div class="row"><label>Тип платежа</label><select id="ptype"><option value="annuity">Аннуитет</option><option value="diff">Дифференцированный</option></select></div>
+        <div class="row"><label>&nbsp;</label><button class="btn" type="submit">Рассчитать</button></div>
+      </form>
+      <section id="summary" class="grid3 hidden" style="margin-top:10px">
+        <div class="card"><strong>Ежемес. платёж</strong><div id="monthly">—</div></div>
+        <div class="card"><strong>Переплата</strong><div id="overpay">—</div></div>
+        <div class="card"><strong>Итого к выплате</strong><div id="totalpay">—</div></div>
+      </section>
+      <section id="schedule" class="table-wrap hidden">
+        <h3>График платежей</h3>
+        <table><thead><tr><th>Месяц</th><th>Платёж</th><th>Проценты</th><th>Тело</th><th>Остаток</th></tr></thead><tbody id="rows"></tbody></table>
+      </section>
+      <div class="ad-block"><small>Реклама</small><div id="ad_rtb_credit"></div></div>
+      <div class="cta-card"><h3>💡 Найдите лучшие условия кредита</h3><p>Сравните предложения банков и сэкономьте на процентах</p><a href="https://partner-link" class="btn">Сравнить кредиты →</a><small style="color:#64748B">Партнёрская ссылка</small></div>
+      <section class="seo">
+        <h3>Как пользоваться кредитным калькулятором</h3>
+        <p>Введите сумму кредита, срок в месяцах и годовую ставку, затем выберите тип платежа. Аннуитетный платёж — фиксированный на весь срок, дифференцированный — уменьшается ежемесячно за счёт равномерного погашения тела кредита.</p>
+        <p>Для расчёта ипотеки воспользуйтесь <a href="#mortgage">ипотечным калькулятором</a>. Валюты можно пересчитать в <a href="#currency">конвертере ЦБ РФ</a>.</p>
+        <h3>Формула аннуитетного платежа</h3>
+        <p>Платёж = S × i / (1 − (1 + i)<sup>−n</sup>), где S — сумма кредита, i — месячная ставка (годовая/12/100), n — срок в месяцах.</p>
+        <h3>FAQ</h3>
+        <ul><li>Чем аннуитет отличается от дифференцированного платежа?</li><li>Как посчитать переплату?</li><li>Можно ли менять тип платежа после оформления?</li><li>Что будет при досрочном погашении?</li></ul>
+      </section>
+      <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"WebApplication","name":"Кредитный калькулятор онлайн","url":"https://smartcalcus.ru#credit","applicationCategory":"FinanceApplication","description":"Рассчитайте кредит: аннуитетный и дифференцированный платёж, график, переплата.","offers":{"@type":"Offer","price":"0","priceCurrency":"RUB"}}
+      </script>
+      <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"Чем аннуитет отличается от дифференцированного платежа?","acceptedAnswer":{"@type":"Answer","text":"Аннуитет — фиксированный платёж; дифференцированный — снижается за счёт равномерного погашения тела."}},
+        {"@type":"Question","name":"Как посчитать переплату?","acceptedAnswer":{"@type":"Answer","text":"Переплата — сумма всех платежей минус сумма кредита. В калькуляторе рассчитывается автоматически."}},
+        {"@type":"Question","name":"Можно ли менять тип платежа после оформления?","acceptedAnswer":{"@type":"Answer","text":"Как правило, нет. Уточняйте условия в банке."}},
+        {"@type":"Question","name":"Что будет при досрочном погашении?","acceptedAnswer":{"@type":"Answer","text":"Снижается переплата; можно уменьшить срок или платёж по правилам банка."}}
+      ]}
+      </script>
+    </section>
+
+    <section id="mortgage" class="section">
+      <h2>Ипотечный калькулятор с досрочным погашением</h2>
+      <form id="mortgage-form" class="form grid3">
+        <div class="row"><label>Сумма ипотеки (₽)</label><input type="number" id="m_amount" value="6000000" min="100000" step="10000" required></div>
+        <div class="row"><label>Срок (лет)</label><input type="number" id="m_years" value="20" min="1" step="1" required></div>
+        <div class="row"><label>Ставка (% годовых)</label><input type="number" id="m_rate" value="13" min="0" step="0.01" required></div>
+        <div class="row"><label>Месяц досрочки</label><input type="number" id="m_premonth" value="13" min="1" step="1"></div>
+        <div class="row"><label>Сумма досрочки (₽)</label><input type="number" id="m_preamount" value="300000" min="0" step="1000"></div>
+        <div class="row"><label>Что уменьшать?</label><select id="m_reduce"><option value="term">Срок кредита</option><option value="payment">Ежемесячный платёж</option></select></div>
+        <div class="row"><label>&nbsp;</label><button class="btn" type="submit">Рассчитать</button></div>
+      </form>
+      <section id="m_results" class="grid3 hidden" style="margin-top:10px">
+        <div class="card"><strong>Новый платёж</strong><div id="m_newpay">—</div></div>
+        <div class="card"><strong>Новый срок</strong><div id="m_newterm">—</div></div>
+        <div class="card"><strong>Примечание</strong><div>Расчёт носит справочный характер.</div></div>
+      </section>
+      <section class="table-wrap">
+        <h3>График до досрочного погашения</h3>
+        <table><thead><tr><th>Месяц</th><th>Платёж</th><th>Проценты</th><th>Тело</th><th>Остаток</th></tr></thead><tbody id="m_rows_before"></tbody></table>
+      </section>
+      <section class="table-wrap">
+        <h3>График после досрочного погашения</h3>
+        <table><thead><tr><th>Месяц</th><th>Платёж</th><th>Проценты</th><th>Тело</th><th>Остаток</th></tr></thead><tbody id="m_rows_after"></tbody></table>
+      </section>
+      <div class="ad-block"><small>Реклама</small><div id="ad_rtb_mortgage"></div></div>
+      <div class="cta-card"><h3>💡 Сравните ипотечные ставки</h3><p>Подберите лучшие условия ипотеки и сэкономьте на процентах</p><a href="https://partner-link" class="btn">Сравнить ипотеки →</a><small style="color:#64748B">Партнёрская ссылка</small></div>
+      <section class="seo">
+        <h3>Как пользоваться ипотечным калькулятором</h3>
+        <p>Укажите сумму, срок и ставку. Задайте параметры досрочного погашения: месяц внесения и сумму. Выберите, что уменьшать — срок кредита или ежемесячный платёж. Сервис построит два графика: до и после досрочки.</p>
+        <h3>Формула расчёта аннуитетной ипотеки</h3>
+        <p>Используется та же формула аннуитетного платежа, что и для потребительских кредитов. При частичном погашении либо уменьшается срок, либо перерасчитывается платёж на оставшийся срок.</p>
+        <h3>FAQ</h3>
+        <ul><li>Когда выгоднее уменьшать срок, а когда платёж?</li><li>Можно ли вносить досрочные платежи несколько раз?</li><li>Как штрафы и комиссии влияют на экономию?</li></ul>
+      </section>
+      <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"WebApplication","name":"Ипотечный калькулятор онлайн","url":"https://smartcalcus.ru#mortgage","applicationCategory":"FinanceApplication","description":"Ипотека с досрочным погашением: уменьшение срока или платежа, пересчёт графика."}
+      </script>
+      <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"Когда выгоднее уменьшать срок, а когда платёж?","acceptedAnswer":{"@type":"Answer","text":"Обычно уменьшение срока снижает переплату сильнее; уменьшение платежа повышает комфорт ежемесячных выплат."}},
+        {"@type":"Question","name":"Можно ли вносить досрочные платежи несколько раз?","acceptedAnswer":{"@type":"Answer","text":"Да, большинство банков допускают многократные частичные погашения по заявлению клиента."}},
+        {"@type":"Question","name":"Есть ли штрафы за досрочку?","acceptedAnswer":{"@type":"Answer","text":"См. условия договора: комиссии за досрочку обычно отсутствуют, но могут быть сроки уведомления."}}
+      ]}
+      </script>
+    </section>
+
+    <section id="currency" class="section">
+      <h2>Конвертер валют (курсы ЦБ РФ)</h2>
+      <form id="cur-form" class="form grid3">
+        <div class="row"><label>Сумма</label><input type="number" id="cur_amount" value="100" min="0" step="0.01"></div>
+        <div class="row"><label>Из валюты</label><select id="cur_from"><option>RUB</option><option>USD</option><option>EUR</option><option>GBP</option><option>KZT</option><option>CNY</option><option>AED</option></select></div>
+        <div class="row"><label>В валюту</label><select id="cur_to"><option>USD</option><option>EUR</option><option>GBP</option><option>KZT</option><option>CNY</option><option>AED</option><option>RUB</option></select></div>
+        <div class="row"><label>&nbsp;</label><button class="btn" type="submit">Конвертировать</button></div>
+      </form>
+      <p id="rate_info" class="lead">Загрузка курсов…</p>
+      <div class="card"><strong>Результат:</strong> <span id="cur_result">—</span></div>
+      <div class="ad-block"><small>Реклама</small><div id="ad_rtb_currency"></div></div>
+      <section class="seo">
+        <h3>Как пользоваться конвертером валют</h3>
+        <p>Выберите исходную и целевую валюты, введите сумму и нажмите «Конвертировать». Курсы автоматически подтягиваются с официального JSON API Банка России.</p>
+        <h3>FAQ</h3>
+        <ul><li>Откуда берутся курсы?</li><li>Как часто они обновляются?</li><li>Почему результат отличается от курса обменников?</li></ul>
+      </section>
+      <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"WebApplication","name":"Конвертер валют ЦБ РФ","url":"https://smartcalcus.ru#currency","applicationCategory":"FinanceApplication","description":"Конвертация валют по официальным курсам Банка России (JSON API)."}
+      </script>
+      <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"Откуда берутся курсы?","acceptedAnswer":{"@type":"Answer","text":"Курсы берутся с официального API ЦБ РФ (cbr-xml-daily)."}},
+        {"@type":"Question","name":"Как часто обновляются курсы?","acceptedAnswer":{"@type":"Answer","text":"Обычно ежедневно в рабочие дни; время зависит от публикации ЦБ РФ."}},
+        {"@type":"Question","name":"Почему отличается от курса обменников?","acceptedAnswer":{"@type":"Answer","text":"Обменные пункты используют собственные надбавки/скидки к официальному курсу."}}
+      ]}
+      </script>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div>© SmartCalcus, 2025</div>
+      <div><a href="#credit">Кредиты</a> · <a href="#mortgage">Ипотека</a> · <a href="#currency">Валюты</a></div>
+      <small>SmartCalcus — информационный сервис. Расчёты носят справочный характер.</small>
+    </div>
+  </footer>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXX');</script>
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(99999999, "init", {clickmap:true, trackLinks:true, accurateTrackBounce:true});
+  </script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>
