@@ -1,1 +1,0 @@
-document.addEventListener('DOMContentLoaded',()=>{console.log('SmartCalcus v0.3 SEO-ready loaded.');});
